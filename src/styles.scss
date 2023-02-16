@@ -6,10 +6,14 @@
 @import "variables.scss";
 
 button {
-    cursor: pointer;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background-color: transparent;
-    font-family: 'Jost*';
-  }
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  font-family: 'Jost*';
+}
+
+body{
+  margin: 0;
+}
