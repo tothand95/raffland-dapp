@@ -12,10 +12,8 @@ header {
   height: $header-height;
   padding: $header-padding 0rem;
   z-index: 999;
-  background-color: rgba(black, 0.9);
-
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 
   @media only screen and (max-width: $mobile-breakpoint) {
@@ -34,41 +32,19 @@ header {
     align-items: center;
     justify-content: center;
     background-color: transparent;
-
-    margin: 0 1rem;
   }
 
   & .logo-image {
-    height: 4rem;
-    width: 4rem;
     cursor: pointer;
   }
 
-  & .logo-text {
-    margin: 1rem;
 
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    user-select: none;
+  @media only screen and (max-width: $medium-breakpoint) {
+    display: none;
+  }
 
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-shadow: rgba(black, 0.7) 1px 1px 3px;
-    letter-spacing: 0.125em;
-
-    cursor: pointer;
-
-    @media only screen and (max-width: $medium-breakpoint) {
-      display: none;
-    }
-    
-    @media only screen and (max-width: $mobile-breakpoint) {
-      display: block;
-    }
+  @media only screen and (max-width: $mobile-breakpoint) {
+    display: block;
   }
 }
 
@@ -147,11 +123,10 @@ header .menu-bar-container {
   &>.menu-point {
     padding: 0.375rem 1rem;
 
-    color: #fafafa;
+    color: #24272C;
     font-size: 1em;
     font-weight: 600;
     letter-spacing: 2px;
-    text-shadow: rgba(black, 0.4) 0px 0px 2px;
 
     @media only screen and (max-width: $mobile-breakpoint) {
       padding: 0.675rem;
@@ -161,16 +136,7 @@ header .menu-bar-container {
     }
 
     &:hover {
-      color: $primary-color;
-    }
-
-    &.vote-button {
-      color: $primary-color;
-      font-weight: 800;
-
-      border: 3px solid $primary-color;
-      border-radius: 10rem;
-      text-shadow: unset;
+      color: #fafafa;
     }
   }
 }

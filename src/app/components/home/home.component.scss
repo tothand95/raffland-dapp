@@ -1,0 +1,142 @@
+@import "src/variables.scss";
+
+// --------------------
+// Landing page
+// --------------------
+
+.bc {
+    background-image: linear-gradient(to right, #24272C, #0F0F0F);
+}
+
+.landing-page-banner {
+    width: 100%;
+    height: max(100vh, 62rem);
+    background-image: url('/assets/global/raffland_background.svg');
+    /* 
+    Parallax Effect :
+    background-position-x: center;
+    background-position-y: top;
+    background-attachment: fixed; 
+    */
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-title {
+    width: 34%;
+    font-size: 46px;
+    margin: auto;
+    margin-top: 20rem;
+    font-family: 'Bai Jamjuree';
+    font-weight: Bold;
+    background: -webkit-linear-gradient(45deg, #A1E5F5, #51E5A1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+// --------------------
+// Flying island elements
+// --------------------
+
+.island {
+    width: 32%;
+    margin: auto;
+    margin-bottom: 20rem;
+    display: grid;
+    place-items: center;
+}
+
+.float-lands {
+    animation: floater 5s ease-in-out infinite;
+    width: 32%;
+    position: absolute;
+    margin-bottom: 44rem;
+    margin-right: 5rem;
+}
+
+.rect {
+    width: 15%;
+    position: absolute;
+    margin-top: 1rem;
+}
+
+.float-shadow {
+    animation: floater-shadow 5s ease-in-out infinite;
+    background: #000;
+    border-radius: 50%;
+    width: 120px;
+    height: 15px;
+    opacity: 0.2;
+    transform: scale(1);
+    position: absolute;
+}
+
+@keyframes floater {
+
+    50% {
+        transform: translateY(5%);
+
+    }
+
+}
+
+@keyframes floater-shadow {
+
+    50% {
+        transform: scale(0.5) translateY(5%);
+        opacity: 0.05;
+
+    }
+
+}
+
+// --------------------
+// Summary stats
+// --------------------
+
+.stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: inset 0px 10px 12px #000;
+}
+
+.card1 {
+    width: 350px;
+    height: 170px;
+    border-radius: 30px;
+    background: -webkit-linear-gradient(#fafafa 0%, #51E5A1 20%);
+    overflow: hidden;
+    position: relative;
+}
+
+.card2 {
+    width: 350px;
+    height: 170px;
+    border-radius: 30px;
+    background: -webkit-linear-gradient(#fafafa 0%, #9AFFD1 20%);
+    overflow: hidden;
+    position: relative;
+}
+
+.card3 {
+    width: 350px;
+    height: 170px;
+    border-radius: 30px;
+    background: -webkit-linear-gradient(#fafafa 0%, #A1E5F5 20%);
+    overflow: hidden;
+    position: relative;
+}
+
+.stats img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}

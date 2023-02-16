@@ -1,7 +1,10 @@
 <header>
+  <div class="logo-container">
+    <img class="logo-image" src="assets/global/logo.png" alt="RAFFLAND" (click)="navigateTo('home')">
+  </div>
   <div class="menu-bar-container" [ngClass]="{ 'menu-open': isMenuOpen }">
-    <button class="menu-point" (click)="navigateTo(deoptoRoutes.HOME)">{{ 'DEO.Global.Home' | translate}}</button>
-    <button class="menu-point" (click)="navigateTo(deoptoRoutes.WHITEPAPER)">{{ 'DEO.Global.Whitepaper' | translate}}</button>
+    <!-- <button class="menu-point" (click)="navigateTo(deoptoRoutes.HOME)">{{ 'DEO.Global.Home' | translate}}</button>
+    <button class="menu-point" (click)="navigateTo(deoptoRoutes.WHITEPAPER)">{{ 'DEO.Global.Whitepaper' | translate}}</button> -->
     <button class="menu-point" (click)="navigateTo(deoptoRoutes.HOW_IT_WORKS)">{{ 'DEO.Global.HowItWorks' | translate}}</button>
     <button class="menu-point" (click)="navigateTo(deoptoRoutes.DAPP)">{{ 'DEO.Global.Dapp' | translate}}</button>
   </div>
