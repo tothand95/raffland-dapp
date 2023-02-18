@@ -6,7 +6,4 @@
 
 div.main-container {
   position: relative;
-  min-height: max(40rem, calc(100vh - $footer-height));
-  padding-bottom: $footer-height;
-  background-color: $strip-background-light;
 }

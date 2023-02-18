@@ -10,7 +10,7 @@ header {
   left: 0;
   width: 100%;
   height: $header-height;
-  padding: $header-padding 0rem;
+  padding: 0;
   z-index: 999;
   display: flex;
   justify-content: space-around;
@@ -51,6 +51,11 @@ header {
 // --------------------
 // Navigation and menu styles
 // --------------------
+
+.dapp{
+  border: solid #24272C 1px;
+  border-radius: 10px;
+}
 
 header .lang-change-desktop {
   @media only screen and (max-width: $mobile-breakpoint) {

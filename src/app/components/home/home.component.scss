@@ -9,28 +9,36 @@
 }
 
 .landing-page-banner {
-  width: 100vw;
-  // height: max(100vh, 62rem);
+  width: 100%;
   height: 62rem;
   background-image: url('/assets/global/raffland_background.svg');
-
-  // Parallax Effect :
-  // background-position-x: center;
-  // background-position-y: top;
-  // background-attachment: fixed; 
-
   background-repeat: no-repeat;
   background-size: cover;
-  display: grid;
-  grid-template-columns: 43fr 57fr;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+// --------------------
+// Main box elements
+// --------------------
+
+.main-box {
+  width: 40rem;
+  margin-top: -10rem;
+}
+
+.mini-title {
+  font-size: 16px;
+  font-family: 'Bai Jamjuree';
+  font-weight: Bold;
+  color: #525965;
 }
 
 .main-title {
-  grid-column-start: 1;
-  place-self: center;
-  width: 80%;
-
-  border: red 1px solid;
   font-size: 46px;
   font-family: 'Bai Jamjuree';
   font-weight: Bold;
@@ -39,38 +47,130 @@
   -webkit-text-fill-color: transparent;
 }
 
+.button-pnw-pushable {
+  position: relative;
+  margin-left: 20rem;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-pnw-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 32px 10px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-pnw-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 32px 10px;
+  background: linear-gradient(to left,
+      hsl(160, 100%, 16%) 0%,
+      hsl(160, 100%, 35%) 8%,
+      hsl(176, 27%, 49%) 92%,
+      hsl(177, 31%, 54%) 100%);
+}
+
+.button-pnw-front {
+  width: 10rem;
+  height: 100%;
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 10px 10px 32px 10px;
+  font-family: 'Jost*';
+  font-weight: 900;
+  color: #24272C;
+  background: linear-gradient(to right, hsl(194, 75%, 76%) -30%, hsl(160, 75%, 58%) 70%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-pnw-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.button-pnw-pushable:hover {
+  filter: brightness(130%);
+  -webkit-filter: brightness(130%);
+}
+
+.button-pnw-pushable:hover .button-pnw-front {
+  transform: translateY(-9px);
+  transition:
+    transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-pnw-pushable:active .button-pnw-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-pnw-pushable:hover .button-pnw-shadow {
+  transform: translateY(6px);
+  transition:
+    transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-pnw-pushable:active .button-pnw-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-pnw-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
 // --------------------
 // Flying island elements
 // --------------------
 
 .island {
-  grid-column-start: 2;
-  place-self: center;
+  width: 37rem;
+  top: -7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  width: 30rem;
-height: 30rem;
-  border: red 1px solid;
 }
 
 .float-img {
-  position: absolute;
+  z-index: 99;
   top: 0;
   left: 0;
-  
+  margin-bottom: 2rem;
   animation: floater 5s ease-in-out infinite;
-  width: 30vw;
-  z-index: 99;
 }
 
 .rect {
   position: absolute;
-  bottom: -4rem;
+  bottom: -4.2rem;
   left: 0;
-  right: 0;
+  right: 1rem;
   z-index: 0;
-
   width: 20rem;
-
   margin-left: auto;
   margin-right: auto;
   padding-left: 5rem;
@@ -82,18 +182,14 @@ height: 30rem;
   left: 4rem;
   right: 0;
   z-index: 2;
-
   margin-left: auto;
   margin-right: auto;
-  // padding-left: 8rem;
-
-  width: 8rem;
+  width: 10rem;
   height: 1rem;
-
-  animation: floater-shadow 5s ease-in-out infinite;
   background: #000;
   border-radius: 50%;
-  opacity: 0.4;
+  opacity: 0.3;
+  animation: floater-shadow 5s ease-in-out infinite;
 }
 
 @keyframes floater {
@@ -113,42 +209,300 @@ height: 30rem;
 // --------------------
 
 .stats {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  // box-shadow: inset 0px 10px 12px #000;
+  padding-top: min(12rem, 20vw);
+  padding-bottom: 3rem;
+  background: #fafafa;
+  box-shadow: inset 0 20px 20px -20px #000000;
 }
 
-.card1 {
+.stats-card1 {
   width: 350px;
   height: 170px;
-  border-radius: 30px;
-  background: -webkit-linear-gradient(#fafafa 0%, #51E5A1 20%);
+  border-radius: 40px;
+  background: -webkit-linear-gradient(#a9ffe5 0%, #51E5A1 20%);
   overflow: hidden;
   position: relative;
+  box-shadow: 5px 8px 10px #aaaaaa,
+    inset 4px 7px 12px -10px #3a3a3a;
 }
 
-.card2 {
+.stats-card2 {
   width: 350px;
   height: 170px;
-  border-radius: 30px;
-  background: -webkit-linear-gradient(#fafafa 0%, #9AFFD1 20%);
+  border-radius: 40px;
+  background: -webkit-linear-gradient(#daffee 0%, #9AFFD1 20%);
   overflow: hidden;
   position: relative;
+  box-shadow: 5px 8px 10px #aaaaaa,
+    inset 4px 7px 12px -10px #3a3a3a;
 }
 
-.card3 {
+.stats-card3 {
   width: 350px;
   height: 170px;
-  border-radius: 30px;
-  background: -webkit-linear-gradient(#fafafa 0%, #A1E5F5 20%);
+  border-radius: 40px;
+  background: -webkit-linear-gradient(#dcf9ff 0%, #A1E5F5 20%);
   overflow: hidden;
   position: relative;
+  box-shadow: 5px 8px 10px #aaaaaa,
+    inset 4px 7px 12px -10px #3a3a3a;
 }
 
 .stats img {
   position: absolute;
   left: 0;
   bottom: 0;
+}
+
+// --------------------
+// How it works
+// --------------------
+
+.hiw {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: min(15rem, 25vw);
+  padding-bottom: 3.5rem;
+  background: #fafafa;
+}
+
+.row-flip{
+  position: absolute;
+  width: 65%;
+  height: 25rem;
+  background: #24272C;
+  transform: rotate(-5deg);
+  border-radius: 2rem
+}
+
+.row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  background: -webkit-linear-gradient(-70deg, #51E5A1 0%, #9AFFD0 40%, #A1E5F5 100%);
+  border-radius: 2rem;
+  width: 65%;
+  height: 25rem;
+  overflow: hidden;
+  box-shadow: 5px 8px 10px #00000054,
+    inset 5px 7px 12px -10px #3a3a3a;
+}
+
+.col {
+  width: 16rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hiw-title {
+  z-index: 99;
+  position: absolute;
+  margin: 2rem;
+  text-align: center;
+  font-size: 2.2em;
+  font-family: 'Jost*';
+  font-weight: 1000;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.5rem;
+  width: 4.5rem;
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.2em;
+  font-family: 'Jost*';
+  font-weight: 1000;
+  border: solid #929292 2px;
+  background-color: #fafafa;
+  border-radius: 4.5rem;
+}
+
+.hiw-circle-title {
+  text-align: center;
+  color: #24272C;
+  font-size: 1.1em;
+  font-family: 'Jost*';
+  font-weight: 500;
+}
+
+.gems-img {
+  position: absolute;
+  width: 12rem;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+}
+
+.dots-dark-img {
+  position: absolute;
+  width: 50rem;
+  right: 4rem;
+  top: 3rem;
+  z-index: 99;
+}
+
+// --------------------
+// Shape divider
+// --------------------
+
+.custom-shape-divider-bottom-1676734256 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  transform: rotateX(180deg) rotateY(180deg);
+
+  & svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 240px;
+  }
+
+  & .shape-fill {
+    fill: #FAFAFA;
+  }
+}
+
+// --------------------
+// Choose your game
+// --------------------
+
+.games {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  width: 100%;
+  height: 36rem;
+}
+
+.games-title {
+  position: absolute;
+  padding-top: 2rem;
+  color: #fafafa;
+  text-align: center;
+  font-size: 2.2em;
+  font-family: 'Jost*';
+  font-weight: 1000;
+}
+
+.dots-white-img {
+  position: absolute;
+  width: 35rem;
+  right: 4rem;
+  top: 0;
+  z-index: 99;
+}
+
+.games-card-shadow {
+  cursor: pointer;
+  margin-top: 14rem;
+  width: 14rem;
+  height: 19rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-radius: 2rem;
+  box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.3),
+    inset -5px -5px 15px rgba(40, 40, 40, 0.3), 
+    5px 5px 15px rgba(0, 0, 0, 0.3), 
+    -5px -5px 15px rgba(40, 40, 40, 0.3);
+}
+
+.pools {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  inset: 5px;
+  border-radius: 2rem;
+  background: -webkit-linear-gradient(-70deg, #cccccc 0%, #bbbbbb00 100%,);
+  transition: 0.2s;
+}
+
+.pools:hover {
+  transform: translate(10px, -10px);
+  box-shadow: -30px 30px 50px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+.pools:active{
+  transform: translateY(-2px);
+  transition: transform 20ms;
+}
+
+.games-pools-title{
+  padding-top: 1rem;
+  color: #24272C;
+  text-align: center;
+  font-size: 1.7em;
+  font-family: 'Jost*';
+  font-weight: 700;
+}
+
+.games-pools-img{
+  padding-top: 1rem;
+  width: 11rem;
+}
+
+.games-pools-img1{
+  padding-bottom: 1rem;
+  width: 11rem;
+}
+
+// --------------------
+// Description
+// --------------------
+
+.description{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  width: 100%;
+  height: 25rem;
+}
+
+.description-col{
+  margin-top: 4rem;
+  width: 25rem;
+  height: 19rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.description-title{
+  padding: 1rem;
+  color: #fafafa;
+  font-size: 2em;
+  font-family: 'Jost*';
+  font-weight: 600;
+}
+
+.description-text{
+  padding: 1rem;
+  color: #acacac;
+  font-size: 1.2em;
+  font-family: 'Jost*';
+  font-weight: 400;
 }
