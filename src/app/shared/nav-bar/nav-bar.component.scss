@@ -57,6 +57,12 @@ header {
   border-radius: 10px;
 }
 
+.dapp:hover{
+  // background-color: #fafafa30;
+  box-shadow: inset 0px 0px 0px 1px #24272c59;
+  border: solid #4d4d4d 1px;
+}
+
 header .lang-change-desktop {
   @media only screen and (max-width: $mobile-breakpoint) {
     display: none;
@@ -126,7 +132,7 @@ header .menu-bar-container {
   }
 
   &>.menu-point {
-    padding: 0.375rem 1rem;
+    padding: 0.45rem 1rem;
 
     color: #24272C;
     font-size: 1em;
@@ -182,6 +188,7 @@ header .lang-change-mobile {
 
     &:hover {
       color: $primary-color;
+      
     }
   }
 }

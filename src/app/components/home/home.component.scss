@@ -43,7 +43,7 @@
   font-family: 'Bai Jamjuree';
   font-weight: Bold;
   background: -webkit-linear-gradient(45deg, #A1E5F5, #51E5A1);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -97,7 +97,7 @@
   padding: 12px 27px;
   border-radius: 10px 10px 32px 10px;
   font-family: 'Jost*';
-  font-weight: 900;
+  font-weight: 800;
   color: #24272C;
   background: linear-gradient(to right, hsl(194, 75%, 76%) -30%, hsl(160, 75%, 58%) 70%);
   will-change: transform;
