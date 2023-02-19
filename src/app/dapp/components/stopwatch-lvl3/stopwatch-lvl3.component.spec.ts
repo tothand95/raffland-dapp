@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DappHomeComponent } from './dapp-home.component';
+import { StopwatchLvl3Component } from './stopwatch-lvl3.component';
 
-describe('DappHomeComponent', () => {
-  let component: DappHomeComponent;
-  let fixture: ComponentFixture<DappHomeComponent>;
+describe('StopwatchLvl3Component', () => {
+  let component: StopwatchLvl3Component;
+  let fixture: ComponentFixture<StopwatchLvl3Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DappHomeComponent ]
+      declarations: [ StopwatchLvl3Component ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DappHomeComponent);
+    fixture = TestBed.createComponent(StopwatchLvl3Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
