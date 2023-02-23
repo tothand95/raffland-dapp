@@ -15,19 +15,21 @@ import { DeoptoDappRoutes } from './constants/dapp.routes';
 import { DappComponent } from './dapp.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: DeoptoDappRoutes.HOME },
-  { path: DeoptoDappRoutes.HOME, component: DappHomeComponent },
-  { path: DeoptoDappRoutes.STOPWATCH_1, component: StopwatchLvl1Component },
-  { path: DeoptoDappRoutes.STOPWATCH_2, component: StopwatchLvl2Component },
-  { path: DeoptoDappRoutes.STOPWATCH_3, component: StopwatchLvl3Component },
-  { path: DeoptoDappRoutes.STOPWATCH_4, component: StopwatchLvl4Component },
-  { path: DeoptoDappRoutes.STOPWATCH_5, component: StopwatchLvl5Component },
-  { path: DeoptoDappRoutes.FILL_1, component: FillLvl1Component },
-  { path: DeoptoDappRoutes.FILL_2, component: FillLvl2Component },
-  { path: DeoptoDappRoutes.FILL_3, component: FillLvl3Component },
-  { path: DeoptoDappRoutes.FILL_4, component: FillLvl4Component },
-  { path: DeoptoDappRoutes.FILL_5, component: FillLvl5Component },
-  { path: '**', redirectTo: DeoptoDappRoutes.HOME }
+  {
+    path: '', component: DappHomeComponent, children: [
+      { path: DeoptoDappRoutes.STOPWATCH_1, component: StopwatchLvl1Component },
+      { path: DeoptoDappRoutes.STOPWATCH_2, component: StopwatchLvl2Component },
+      { path: DeoptoDappRoutes.STOPWATCH_3, component: StopwatchLvl3Component },
+      { path: DeoptoDappRoutes.STOPWATCH_4, component: StopwatchLvl4Component },
+      { path: DeoptoDappRoutes.STOPWATCH_5, component: StopwatchLvl5Component },
+      { path: DeoptoDappRoutes.FILL_1, component: FillLvl1Component },
+      { path: DeoptoDappRoutes.FILL_2, component: FillLvl2Component },
+      { path: DeoptoDappRoutes.FILL_3, component: FillLvl3Component },
+      { path: DeoptoDappRoutes.FILL_4, component: FillLvl4Component },
+      { path: DeoptoDappRoutes.FILL_5, component: FillLvl5Component },
+      { path: '**', redirectTo: DeoptoDappRoutes.STOPWATCH_1 }
+    ]
+  }
 ];
 
 @NgModule({
