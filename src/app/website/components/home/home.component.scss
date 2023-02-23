@@ -187,7 +187,7 @@
   width: 11rem;
   height: 1.75rem;
   // background: #000;
-  background: radial-gradient(50% 50%, #000000de 0%, #000000b2 50%, #00000000 100%,);
+  background: radial-gradient(50% 50%, #000000de 0%, #000000b2 50%, #00000000 100%, );
   border-radius: 50%;
   opacity: 0.3;
   animation: floater-shadow 5s ease-in-out infinite;
@@ -273,7 +273,7 @@
   background: #fafafa;
 }
 
-.row-flip{
+.row-flip {
   position: absolute;
   width: 65%;
   height: 25rem;
@@ -422,8 +422,8 @@
   position: relative;
   border-radius: 2rem;
   box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.3),
-    inset -5px -5px 15px rgba(40, 40, 40, 0.3), 
-    5px 5px 15px rgba(0, 0, 0, 0.3), 
+    inset -5px -5px 15px rgba(40, 40, 40, 0.3),
+    5px 5px 15px rgba(0, 0, 0, 0.3),
     -5px -5px 15px rgba(40, 40, 40, 0.3);
 }
 
@@ -434,7 +434,7 @@
   align-items: center;
   inset: 5px;
   border-radius: 2rem;
-  background: -webkit-linear-gradient(-70deg, #9c9c9c 0%, #bbbbbb00 100%,);
+  background: -webkit-linear-gradient(-70deg, #9c9c9c 0%, #bbbbbb00 100%, );
   transition: 0.2s;
 }
 
@@ -445,12 +445,12 @@
   cursor: pointer;
 }
 
-.pools:active{
+.pools:active {
   transform: translateY(-2px);
   transition: transform 20ms;
 }
 
-.games-pools-title{
+.games-pools-title {
   padding-top: 1rem;
   //color: #24272C;
   color: #fafafa;
@@ -460,12 +460,12 @@
   font-weight: 700;
 }
 
-.games-pools-img{
+.games-pools-img {
   padding-top: 1rem;
   width: 11rem;
 }
 
-.games-pools-img1{
+.games-pools-img1 {
   padding-bottom: 1rem;
   width: 11rem;
 }
@@ -474,7 +474,7 @@
 // Description
 // --------------------
 
-.description{
+.description {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -485,7 +485,7 @@
   padding-top: 5rem;
 }
 
-.description-col{
+.description-col {
   position: relative;
   margin-top: 4rem;
   width: 25rem;
@@ -496,7 +496,7 @@
   box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
 }
 
-.description-title{
+.description-title {
   padding: 1rem;
   color: #fafafa;
   font-size: 2em;
@@ -504,7 +504,7 @@
   font-weight: 600;
 }
 
-.description-text{
+.description-text {
   padding: 1rem;
   color: #acacac;
   font-size: 1.2em;
@@ -512,18 +512,16 @@
   font-weight: 400;
 }
 
-.description-img{
+.description-img {
   width: 3rem;
   position: absolute;
   top: 1rem;
   right: 1rem;
 }
 
-.description-img-bigger{
+.description-img-bigger {
   width: 5rem;
   position: absolute;
   top: 1rem;
   right: 1rem;
 }
-
-

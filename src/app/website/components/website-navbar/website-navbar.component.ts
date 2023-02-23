@@ -1,21 +1,18 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { DeoptoRoutes } from 'src/app/constants/routes';
 
 @Component({
-  selector: 'app-nav-bar',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  selector: 'app-website-navbar',
+  templateUrl: './website-navbar.component.html',
+  styleUrls: ['./website-navbar.component.scss']
 })
-export class NavBarComponent {
+export class WebsiteNavbarComponent {
   isHeaderDummyDisplayed: boolean = false;
   isMenuOpen: boolean = false;
   deoptoRoutes = DeoptoRoutes;
-  
+
   get currentLanguage() {
     return this.translateService.currentLang.toUpperCase();
   }

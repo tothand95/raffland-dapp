@@ -12,6 +12,7 @@ import { StopwatchLvl3Component } from './components/stopwatch-lvl3/stopwatch-lv
 import { StopwatchLvl4Component } from './components/stopwatch-lvl4/stopwatch-lvl4.component';
 import { StopwatchLvl5Component } from './components/stopwatch-lvl5/stopwatch-lvl5.component';
 import { DeoptoDappRoutes } from './constants/dapp.routes';
+import { DappComponent } from './dapp.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: DeoptoDappRoutes.HOME },
@@ -31,6 +32,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  bootstrap: [DappComponent]
 })
 export class DappRoutingModule { }
