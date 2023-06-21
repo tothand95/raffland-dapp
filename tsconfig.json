@@ -19,10 +19,25 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
+    "skipLibCheck": true,
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "assert": ["./node_modules/assert/"],
+      "crypto": ["./node_modules/crypto-browserify"],
+
+      "http": ["./node_modules/stream-http"],
+      "https": ["./node_modules/https-browserify"],
+
+
+      "os": ["./node_modules/os-browserify"],
+      "path": ["./node_modules/path-browserify"],
+      "stream": ["./node_modules/stream-browserify"],
+      "url": ["./node_modules/url/"],
+      "zlib": ["./node_modules/browserify-zlib"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
